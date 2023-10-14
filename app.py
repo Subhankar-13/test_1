@@ -51,7 +51,7 @@ subprocess.run(cmd)
 with open(article_list_path, "rb") as articles:
     article_list = tuple(pickle.load(articles))
     
-INDEXES = ["miread_large", "miread_contrastive", "scibert_contrastive"]
+INDEXES = ["ArenaTester/miread_large", "ArenaTester/miread_contrastive", "ArenaTester/scibert_contrastive"]
 MODELS = [
     "biodatlab/MIReAD-Neuro-Large",
     "biodatlab/MIReAD-Neuro-Contrastive",
