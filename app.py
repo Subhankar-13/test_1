@@ -36,9 +36,9 @@ def download_file(url, local_filename):
 
 # URLs of your remote files
 article_list_url = "https://huggingface.co/spaces/atrytone/ArenaTester/resolve/main/article_list.pkl"
-db_1 = "https://huggingface.co/datasets/PenguinMan/vec_dbs/resolve/main/miread_large/index.faiss"
-db_2 = "https://huggingface.co/datasets/PenguinMan/vec_dbs/resolve/main/miread_contrastive/index.faiss"
-db_3 = "https://huggingface.co/datasets/PenguinMan/vec_dbs/resolve/main/scibert_contrastive/index.faiss"
+db_1 = "https://huggingface.co/spaces/atrytone/ArenaTester/resolve/main/miread_large/index.faiss"
+db_2 = "https://huggingface.co/spaces/atrytone/ArenaTester/resolve/main/miread_contrastive/index.faiss"
+db_3 = "https://huggingface.co/spaces/atrytone/ArenaTester/resolve/main/scibert_contrastive/index.faiss"
 
 # Local paths where the files will be downloaded
 article_list_path = "article_list_2.pkl"
