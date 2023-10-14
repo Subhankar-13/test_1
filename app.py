@@ -42,6 +42,16 @@ cmd = ["git", "clone", "https://huggingface.co/spaces/atrytone/ArenaTester"]
 # Run the command
 subprocess.run(cmd)
 
+current_directory = os.getcwd()
+
+# Define the name of the cloned repository folder
+repository_name = "ArenaTester"
+
+# Combine the current directory and repository name to get the full path
+repository_path = os.path.join(current_directory, repository_name)
+
+# Print the path to the cloned repository
+print(f"The cloned repository is located at: {repository_path}")
 
 # Now load the files from the local paths
 with open("ArenaTester/article_list.pkl", "rb") as articles:
