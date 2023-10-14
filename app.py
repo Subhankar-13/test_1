@@ -45,7 +45,7 @@ subprocess.run(["git", "clone", repository_url])
 
 # Now load the files from the local paths
 with open("/app/test_1/ArenaTester/article_list.pkl", "rb") as articles:
-    article_list = tuple(pickle.load(articles))
+    article_list = pickle.load(articles)
     
 INDEXES = ["/app/test_1/ArenaTester/miread_large", "/app/test_1/ArenaTester/miread_contrastive", "/app/test_1/ArenaTester/scibert_contrastive"]
 MODELS = [
