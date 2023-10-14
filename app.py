@@ -38,19 +38,16 @@ def download_file(url, local_filename):
 
 
 
-# Install Git LFS (if not already installed)
-subprocess.run(["git", "lfs", "install"])
 
-# Clone the Git repository
 repository_url = "https://huggingface.co/spaces/atrytone/ArenaTester"
 subprocess.run(["git", "clone", repository_url])
 
 
 # Now load the files from the local paths
-with open("ArenaTester/article_list.pkl", "rb") as articles:
+with open("/app/test_1/ArenaTester/article_list.pkl", "rb") as articles:
     article_list = tuple(pickle.load(articles))
     
-INDEXES = ["ArenaTester/miread_large", "ArenaTester/miread_contrastive", "ArenaTester/scibert_contrastive"]
+INDEXES = ["/app/test_1/ArenaTester/miread_large", "/app/test_1/ArenaTester/miread_contrastive", "/app/test_1/ArenaTester/scibert_contrastive"]
 MODELS = [
     "biodatlab/MIReAD-Neuro-Large",
     "biodatlab/MIReAD-Neuro-Contrastive",
