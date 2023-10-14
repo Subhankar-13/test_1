@@ -37,7 +37,7 @@ def download_file(url, local_filename):
 
 # URLs of your remote files
 article_list_url = "https://huggingface.co/spaces/atrytone/ArenaTester/resolve/main/article_list.pkl"
-
+article_list_path = "article_list.pkl"
 # Download the files
 download_file(article_list_url, article_list_path)
 
