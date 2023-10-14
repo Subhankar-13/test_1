@@ -42,9 +42,9 @@ db_3 = "https://huggingface.co/spaces/atrytone/ArenaTester/resolve/main/scibert_
 
 # Local paths where the files will be downloaded
 article_list_path = "article_list_2.pkl"
-db_1_path = "db_1/index.faiss"
-db_2_path = "db_2/index.faiss"
-db_3_path = "db_3/index.faiss"
+db_1_path = "index1.faiss"
+db_2_path = "index2.faiss"
+db_3_path = "index3.faiss"
 
 
 
