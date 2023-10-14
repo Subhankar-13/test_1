@@ -36,21 +36,30 @@ def download_file(url, local_filename):
 
 # URLs of your remote files
 article_list_url = "https://huggingface.co/spaces/atrytone/ArenaTester/resolve/main/article_list.pkl"
-
+db_1 = "https://huggingface.co/datasets/PenguinMan/vec_dbs/resolve/main/miread_large/index.faiss"
+db_2 = "https://huggingface.co/datasets/PenguinMan/vec_dbs/resolve/main/miread_contrastive/index.faiss"
+db_3 = "https://huggingface.co/datasets/PenguinMan/vec_dbs/resolve/main/scibert_contrastive/index.faiss"
 
 # Local paths where the files will be downloaded
 article_list_path = "article_list_2.pkl"
+db_1_path = "db_1.faiss"
+db_2_path = "db_2.faiss"
+db_3_path = "db_3.faiss"
 
 
 # Download the files
 download_file(article_list_url, article_list_path)
+download_file(db_1, db_1_path)
+download_file(db_2, db_2_path)
+download_file(db_3, db_3_path)
+
 
 
 # Now load the files from the local paths
 with open(article_list_path, "rb") as articles:
     article_list = tuple(pickle.load(articles))
     
-INDEXES = ["miread_large", "miread_contrastive", "scibert_contrastive"]
+INDEXES = [db_1_path, db_2_path , db_3_path]
 MODELS = [
     "biodatlab/MIReAD-Neuro-Large",
     "biodatlab/MIReAD-Neuro-Contrastive",
