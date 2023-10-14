@@ -35,11 +35,7 @@ def download_file(url, local_filename):
                 f.write(chunk)
     return local_filename
 
-# URLs of your remote files
-article_list_url = "https://huggingface.co/spaces/atrytone/ArenaTester/resolve/main/article_list.pkl"
-article_list_path = "article_list.pkl"
-# Download the files
-download_file(article_list_url, article_list_path)
+
 
 cmd = ["git", "clone", "https://huggingface.co/spaces/atrytone/ArenaTester"]
 
@@ -48,7 +44,7 @@ subprocess.run(cmd)
 
 
 # Now load the files from the local paths
-with open(article_list_path, "rb") as articles:
+with open("article_list.pkl", "rb") as articles:
     article_list = tuple(pickle.load(articles))
     
 INDEXES = ["ArenaTester/miread_large", "ArenaTester/miread_contrastive", "ArenaTester/scibert_contrastive"]
