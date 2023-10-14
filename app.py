@@ -44,7 +44,7 @@ subprocess.run(cmd)
 
 
 # Now load the files from the local paths
-with open("article_list.pkl", "rb") as articles:
+with open("ArenaTester/article_list.pkl", "rb") as articles:
     article_list = tuple(pickle.load(articles))
     
 INDEXES = ["ArenaTester/miread_large", "ArenaTester/miread_contrastive", "ArenaTester/scibert_contrastive"]
