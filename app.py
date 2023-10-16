@@ -35,9 +35,16 @@ def download_file(url, local_filename):
                 f.write(chunk)
     return local_filename
 
+repository_url = "https://huggingface.co/spaces/atrytone/ArenaTester"
+try:
+    # Try to install git lfs
+    subprocess.run(["curl", "-s", "https://github.com/git-lfs/git-lfs/releases/download/v3.4.0/git-lfs-windows-v3.4.0.exe", "|", "sudo", "bash"], check=True)
+    subprocess.run(["sudo", "apt-get", "install", "git-lfs"], check=True)
+    subprocess.run(["git", "lfs", "install"], check=True)
+except subprocess.CalledProcessError:
+    print("Error installing git lfs.")
 
-
-
+subprocess.run(["git", "clone", repository_url])
 
 
 
