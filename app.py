@@ -40,7 +40,14 @@ def download_file(url, local_filename):
 
 
 repository_url = "https://huggingface.co/spaces/atrytone/ArenaTester"
-subprocess.run(["git", "lfs", "install"], check=True)
+try:
+    # Try to install git lfs
+    subprocess.run(["curl", "-s", "https://packagecloud.io/install/repositories/github/git-lfs/script.deb.sh", "|", "sudo", "bash"], check=True)
+    subprocess.run(["sudo", "apt-get", "install", "git-lfs"], check=True)
+    subprocess.run(["git", "lfs", "install"], check=True)
+except subprocess.CalledProcessError:
+    print("Error installing git lfs.")
+
 subprocess.run(["git", "clone", repository_url])
 
 
