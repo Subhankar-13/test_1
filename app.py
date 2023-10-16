@@ -39,21 +39,14 @@ def download_file(url, local_filename):
 
 
 
-repository_url = "https://huggingface.co/spaces/atrytone/ArenaTester"
-try:
-    # Try to install git lfs
-    subprocess.run(["curl", "-s", "https://github.com/git-lfs/git-lfs/releases/download/v3.4.0/git-lfs-windows-v3.4.0.exe", "|", "sudo", "bash"], check=True)
-    subprocess.run(["sudo", "apt-get", "install", "git-lfs"], check=True)
-    subprocess.run(["git", "lfs", "install"], check=True)
-except subprocess.CalledProcessError:
-    print("Error installing git lfs.")
-
-subprocess.run(["git", "clone", repository_url])
 
 
+url = "https://huggingface.co/spaces/atrytone/ArenaTester/resolve/main/article_list.pkl"
+path = "article_list2.pkl"
+download_file(url, path)
 
 # Now load the files from the local paths
-with open("/app/test_1/ArenaTester/article_list.pkl", "rb") as articles:
+with open("article_list2.pkl", "rb") as articles:
     article_list = tuple(pickle.load(articles))
     
 INDEXES = ["/app/test_1/ArenaTester/miread_large", "/app/test_1/ArenaTester/miread_contrastive", "/app/test_1/ArenaTester/scibert_contrastive"]
