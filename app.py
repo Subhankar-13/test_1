@@ -40,7 +40,9 @@ def download_file(url, local_filename):
 
 
 repository_url = "https://huggingface.co/spaces/atrytone/ArenaTester"
+subprocess.run(["git", "lfs", "install"], check=True)
 subprocess.run(["git", "clone", repository_url])
+
 
 
 # Now load the files from the local paths
